@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 
 #define PORT 4578
 #define PACKET_SIZE 1024
@@ -8,5 +9,4 @@ class Server
 {
 private:
 public:
-    void Server::showError(const char *msg);
 };
