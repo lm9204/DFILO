@@ -1,8 +1,6 @@
 #include <iostream>
 #include <string>
 
-#define id_Eugene 980914
-
 using namespace std;
 
 /*---------------------------------------------------------------------------------- */
@@ -10,7 +8,6 @@ using namespace std;
 class chatting_room
 {
 private:
-    int my_id;               //본인 id
     string chatting_room_id; //채팅방 고유 id
 
 public:
@@ -18,45 +15,33 @@ public:
     string chatting_room_name; //채팅방 이름 100자 제한
     string chatting_room_member[100];
 
-    chatting_room(int _my_id, int _chatting_room_id)
+    chatting_room(int _chatting_room_id)
     {
-        my_id = _my_id;
         chatting_room_id = _chatting_room_id;
     }
 };
 
 /*---------------------------------------------------------------------------------- */
 
-void get_chatting_room_name(char);
-string get_chatting_room_name();
+string get_chatting_room_name(); //서버 클라이언트 기능
+int get_chatting_room_id();      //서버 클라이언트 기능
 
 /*---------------------------------------------------------------------------------- */
 
 int main()
 {
 
-    chatting_room test(id_Eugene, get_chatting_room_id());
-
     return 0;
 }
 
 /*---------------------------------------------------------------------------------- */
 
-int get_chatting_room_id() //아직 안만듬 ???
+int get_chatting_room_id()
 {
     ;
 }
 
 string get_chatting_room_name()
 {
-    string tmp;
-
-    getline(cin, tmp);
-
-    if (tmp[99] != NULL) // 100자 제한
-    {
-        get_chatting_room_name();
-    }
-
-    return tmp;
+    ;
 }
