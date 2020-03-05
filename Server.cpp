@@ -88,10 +88,7 @@ void clientSocket()
 
     //소켓 생성
     SOCKET hSocket;
-    hListen = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP); //(IPV4,연결지향성,TCP)
-
-    if (hListen == INVALID_SOCKET)
-        std::cout << "서버 생성 실패" << std::endl;
+    hSocket = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP); //(IPV4,연결지향성,TCP)
 
     //소켓의 구성요소를 담을 구조체 생성 및 값 할당
     SOCKADDR_IN tAddr = {};
