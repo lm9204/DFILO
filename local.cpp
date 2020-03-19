@@ -7,21 +7,24 @@ using namespace std;
 /*----------------------------------------------------------------*/
 struct data
 {
+    string chat;
+    string friends;
+    string message;
 };
 /*----------------------------------------------------------------*/
 class Local
 {
 private:
 public:
-    static string read();
-    static void write(string tmp);
+    static string read(string file);
+    static void write(string tmp, string file);
 };
 /*----------------------------------------------------------------*/
-string Local::read()
+string Local::read(string file)
 {
     string tmp;
 
-    ifstream readFile("name.txt");
+    ifstream readFile(file);
     if (readFile.is_open())
     {
         while (!readFile.eof())
@@ -34,11 +37,11 @@ string Local::read()
     return tmp;
 }
 
-void Local::write(string tmp)
+void Local::write(string tmp, string file)
 {
     int len = sizeof(tmp);
 
-    ofstream writeFile("name.txt");
+    ofstream writeFile(file);
     for (int i = 0; i < len; ++i)
     {
         if (i != len - 1)
